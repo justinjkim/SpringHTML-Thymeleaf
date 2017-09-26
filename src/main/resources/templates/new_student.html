@@ -10,7 +10,7 @@
      Add an inputs for first name, last name and grade.
      Use thymeleaf to access the grades that were added to the model in the
       controller to show in the <select> pulldown list -->
-`   <form action="/create_student" method="post">
+    <form action="/create_student" method="post">
     <table>
         <tr>
             <td>First Name:</td>
@@ -25,7 +25,7 @@
             <td>
                 <select name="grade">
                     <!-- thymeleaf option tag -->
-                    <option th:each="grade: ${Grade}" th:value="${grade}" th:text="${day}" />
+                    <option th:each="grade: ${grades}" th:value="${grade}" th:text="${grade}" /> <!--Ohh...I see. "grades" refers to line 13 of SC.java -->
                 </select>
             </td>
         </tr>
