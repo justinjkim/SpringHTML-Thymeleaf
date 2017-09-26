@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>All Students</title>
+</head>
+<body>
+<h2>Students enrolled at The Iron Yard</h2>
+
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Grade</th>
+    </tr>
+
+    <tr th:each="student: ${students}">
+        <td th:text="${student.firstName}">Joe</td>
+        <td th:text="${student.lastName}">Johnson</td>
+        <td th:text="${student.grade}">Fourth</td>
+    </tr>
+</table>
+
+</body>
+</html>
