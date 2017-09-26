@@ -14,17 +14,18 @@
     <table>
         <tr>
             <td>First Name:</td>
-            <td><!-- first_name text field --></td>
+            <td><input type="text" name="first_name" placeholder="First Name" /></td>
         </tr>
         <tr>
             <td>Last Name:</td>
-            <td><!-- last_name text field --></td>
+            <td><input type="text" name="last_name" placeholder="Last Name" /></td>
         </tr>
         <tr>
             <td>Grade:</td>
             <td>
                 <select name="grade">
                     <!-- thymeleaf option tag -->
+                    <option th:each="grade: ${Grade}" th:value="${grade}" th:text="${day}" />
                 </select>
             </td>
         </tr>
