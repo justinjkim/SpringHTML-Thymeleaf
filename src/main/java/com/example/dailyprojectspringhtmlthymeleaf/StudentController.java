@@ -15,12 +15,16 @@ public class StudentController {
     }
 
     @RequestMapping("/create_student")
-    public String createStudent(@RequestParam(value="first_name") String firstName, /* @RequestParam for last name */, /* @RequestParam for grade */, Model model) {
+    public String createStudent(@RequestParam(value="first_name") String first_name, @RequestParam(value="last_name") String last_name, @RequestParam(value="grade") Grade grade, Model model) {
         Student student = new Student();
 
         /* set student firstName, lastName and grade using the http request parameters */
+        student.setFirstName(first_name);
+        student.setLastName(last_name);
+        student.setGrade(grade);
 
         /* add the student to the model that will be used by the view_student html file */
+        model.addAttribute("student", student);
 
         return "view_student";
     }
